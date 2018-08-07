@@ -1,4 +1,4 @@
-(function ($, Drupal, drupalSettings) {
+(function (Drupal, drupalSettings) {
     'use strict';
 
     Drupal.behaviors.driftScript = {
@@ -28,7 +28,7 @@
         }
     };
 
-}(jQuery, Drupal, drupalSettings));
+}(Drupal, drupalSettings));
 
 
 <!-- End of Async Drift Code -->
