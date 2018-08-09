@@ -67,6 +67,12 @@ class DriftSettingsForm extends ConfigFormBase {
       ->set('identifier', $form_state->getValue('identifier'))
       ->save();
 
+    //Flushing JS cache to avoid caching of old identifier.
+    \Drupal::service('asset.js.collection_optimizer')
+      ->deleteAll();
+    
+    _drupal_flush_css_js();
+
     parent::submitForm($form, $form_state);
   }
 
